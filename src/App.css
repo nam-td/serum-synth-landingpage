@@ -1,0 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .card-wrapper {
+    @apply relative bg-gradient-to-b from-zinc-700 to-zinc-900 rounded-2xl;
+  }
+  .card-wrapper::before {
+    background: conic-gradient(
+      rgba(81, 128, 247, 0.75) 0deg,
+      rgba(137, 249, 62, 0.75) 0deg,
+      transparent 80deg
+    );
+    @apply absolute h-[150%] w-[150%] top-[-25%] left-[-25%] content-[''] animate-border-spin
+  }
+  .card-content{
+    @apply absolute w-[calc(100%-4px)] h-[calc(100%-4px)] top-[2px] left-[2px] rounded-2xl
+  }
+  .paused{
+    animation-play-state: paused;
+  }
+}
